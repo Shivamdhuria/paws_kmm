@@ -8,7 +8,7 @@ import io.ktor.client.request.*
 
 class RecipeServiceImpl: RecipeService {
 
-    private val BASE_URL = "https://dog.ceo/api/"
+    private val BASE_URL = "https://dog.ceo/api"
 
     private val client: HttpClient = HttpClient() {
         install(JsonFeature) {

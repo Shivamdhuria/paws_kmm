@@ -1,5 +1,6 @@
 package com.elixer.paws.android.presentation.ui.dog_list
 
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
@@ -33,6 +34,7 @@ fun DogListScreen(viewModel: DogListViewModel, navController: NavController) {
         Box() {
             Column(modifier = Modifier.padding(bottom = 10.dp)) {
                 TopAppBar(title = { Text(text = "Dog List") })
+                Log.e("ACtivyt", dogs.toString())
                 DogList(dogs = dogs)
             }
 
