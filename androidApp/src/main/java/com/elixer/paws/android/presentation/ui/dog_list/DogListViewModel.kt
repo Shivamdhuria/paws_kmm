@@ -17,7 +17,7 @@ import javax.inject.Inject
 class DogListViewModel @Inject constructor(private val getDogs: GetDogs) : ViewModel() {
 
     val recipes: MutableState<List<Dog>> = mutableStateOf(ArrayList())
-    val loading = mutableStateOf(false)
+    private val loading = mutableStateOf(false)
 
     init {
         loadMore()
@@ -34,14 +34,14 @@ class DogListViewModel @Inject constructor(private val getDogs: GetDogs) : ViewM
             }
 
             dataState.error?.let { error ->
-                Log.e("TAG", "newSearch: ${error}")
+                Log.e("get", "get dogs: ${error}")
             }
 
         }.launchIn(viewModelScope)
     }
 
     /**
-     * Append new recipes to the current list of recipes
+     * Append new dogs to the current list of recipes
      */
     private fun appendDogs(recipes: List<Dog>) {
         val current = ArrayList(this.recipes.value)

@@ -34,7 +34,6 @@ fun DogListScreen(viewModel: DogListViewModel, navController: NavController) {
         Box() {
             Column(modifier = Modifier.padding(bottom = 10.dp)) {
                 TopAppBar(title = { Text(text = "Dog List") })
-                Log.e("ACtivyt", dogs.toString())
                 DogList(dogs = dogs)
             }
 
@@ -42,14 +41,13 @@ fun DogListScreen(viewModel: DogListViewModel, navController: NavController) {
                 Spacer(Modifier.weight(1f))
                 Button(onClick = { viewModel.loadMore() }, modifier = Modifier.fillMaxWidth()) {
                     Text(text = "Load More")
-
                 }
             }
         }
-
     }
 }
 
+@ExperimentalCoroutinesApi
 @Composable
 fun DogList(dogs: List<Dog>) {
     LazyColumn {

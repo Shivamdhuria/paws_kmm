@@ -1,6 +1,6 @@
 package com.elixer.paws.android.di
 
-import com.elixer.paws.shared.datasource.network.RecipeService
+import com.elixer.paws.shared.datasource.network.DogService
 import com.elixer.paws.shared.datasource.network.model.DogDtoMapper
 import com.elixer.paws.shared.interactors.dog_list.GetDogs
 import dagger.Module
@@ -15,7 +15,7 @@ object InteractorsModule {
 
     @ViewModelScoped
     @Provides
-    fun provideGetDogs(recipeService: RecipeService, dtoMapper: DogDtoMapper, ) =
+    fun provideGetDogs(recipeService: DogService, dtoMapper: DogDtoMapper, ) =
         GetDogs(recipeService = recipeService, dtoMapper)
 //
 //  @ViewModelScoped

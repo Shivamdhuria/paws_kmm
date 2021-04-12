@@ -1,7 +1,7 @@
 package com.elixer.paws.android.di
 
-import com.elixer.paws.shared.datasource.network.RecipeService
-import com.elixer.paws.shared.datasource.network.RecipeServiceImpl
+import com.elixer.paws.shared.datasource.network.DogService
+import com.elixer.paws.shared.datasource.network.DogServiceImpl
 import com.elixer.paws.shared.datasource.network.model.DogDtoMapper
 import dagger.Module
 import dagger.Provides
@@ -15,8 +15,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRecipeService(): RecipeService {
-        return RecipeServiceImpl()
+    fun provideRecipeService(): DogService {
+        return DogServiceImpl()
     }
 
     @Singleton

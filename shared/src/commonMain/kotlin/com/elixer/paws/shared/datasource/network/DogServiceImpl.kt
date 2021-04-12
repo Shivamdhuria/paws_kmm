@@ -6,7 +6,7 @@ import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.request.*
 
-class RecipeServiceImpl: RecipeService {
+class DogServiceImpl: DogService {
 
     private val BASE_URL = "https://dog.ceo/api"
 
