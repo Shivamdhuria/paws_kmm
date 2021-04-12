@@ -21,10 +21,8 @@ class DogListViewModel: ObservableObject {
     @Published private(set) var state: ResultState = .loading
     
     // The Recipes
-    @Published var recipes: [Dog] = []
-    
-    
-    
+    @Published var dogs: [Dog] = []
+
     @Published var loading = false
     
     func loadDogs() {
@@ -49,87 +47,12 @@ class DogListViewModel: ObservableObject {
                 }
             })
         }catch{
-            
-            
         }
-        
     }
     private func appendRecipes(recipes: [Dog]){
-        self.recipes.append(contentsOf: recipes)
+        self.dogs.append(contentsOf: recipes)
     }
 }
-
-//    @Published private(set) var state: ResultState = .loading
-
-//    func getDogs() {
-//        self.state = .loading
-//        let cancellable = service
-//            .request(from: .getUsers)
-//            .sink{res in
-//                switch res {
-//
-//                case .finished:
-//                    self.state = .success(content: self.dogUrls)
-//                    break
-//
-//                case .failure(let error):
-//                    self.state = .failed(error: error)
-//                    break
-//                }
-//            }
-//            receiveValue: { users in
-//                let oldData = self.dogUrls
-//                self.dogUrls = oldData + users.message
-////                self.dogUrls = users.message
-//            }
-//        //To keep hold of the request
-//        self.cancellables.insert(cancellable)
-//    }
-
-
-
-//    init() {
-//        setUpPublisher()
-//    }
-//private var anyCancellable: AnyCancellable?
-
-//    private func setUpPublisher(){
-//        let url = URL(string: "https://jsonplaceholder.typicode.com/users")!
-//        anyCancellable =  URLSession.shared.dataTaskPublisher(for: url)
-//            .tryMap{(data,response) in
-//                guard let httpResponse = response as? HTTPURLResponse,
-//                      httpResponse.statusCode == 200 else {
-//                    throw URLError(.badServerResponse)
-//                }
-//                return data
-//            }
-//            .decode(type: [User].self, decoder: JSONDecoder())
-//            .receive(on: DispatchQueue.main)
-//            .sink(receiveCompletion: {_ in }){users in
-//                self.users = users
-//            }
-//
-//    }
-//}
-
-//extension BreweriesViewModel {
-//    enum State {
-//        case idle
-//        case loading
-//        case loaded([User])
-//        case error(Error)
-//    }
-//
-//    enum Event {
-//        case onAppear
-//        case onSelectMovie(Int)
-//        case onMoviesLoaded([User])
-//        case onFailedToLoadMovies(Error)
-//    }
-//}
-
-
-
 
 enum ResultState {
     case loading

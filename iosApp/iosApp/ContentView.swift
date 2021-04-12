@@ -15,14 +15,14 @@ struct ContentView: View {
         
         VStack{
             NavigationView {
-                List(viewModel.recipes, id: \.self) { dog in
+                List(viewModel.dogs, id: \.self) { dog in
                     DogItemView(dog: dog).padding(.bottom, 20)
                 }.navigationBarTitle("Dogs")
                 
             }
             switch viewModel.state {
             case .loading: ProgressView()
-            case .failed(let errorMessage):ErrorView(errorMessage: errorMessage, handler: viewModel.loadDogs)
+            case .failed(let errorMessage):ErrorView(error: errorMessage, handler: viewModel.loadDogs)
             case .success:
                     Spacer()
                     Button (action : viewModel.loadDogs ,label :{Text("Load more ")})
