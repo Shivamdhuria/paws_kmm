@@ -3,16 +3,39 @@ import shared
 
 struct ContentView: View {
     
+    @ObservedObject var viewModel: DogListViewModel
     
-    let greet = Greeting().greeting()
-
+    init(getDog : GetDogs) {
+        viewModel = DogListViewModel(getDogs: getDog)
+    }
+    
+    
+    
     var body: some View {
-        Text(greet)
+        
+        VStack{
+            NavigationView {
+                List(viewModel.recipes, id: \.self) { dog in
+                    DogItemView(dog: dog).padding(.bottom, 20)
+                }.navigationBarTitle("Dogs")
+                
+            }
+            switch viewModel.state {
+            case .loading: ProgressView()
+            case .failed(let errorMessage):ErrorView(errorMessage: errorMessage, handler: viewModel.loadDogs)
+            case .success:
+                    Spacer()
+                    Button (action : viewModel.loadDogs ,label :{Text("Load more ")})
+
+            }
+        }.onAppear(perform: viewModel.loadDogs)
     }
+    
+    
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

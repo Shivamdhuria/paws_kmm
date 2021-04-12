@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.flow
 
 class GetDogs(private val recipeService: DogService, private val dtoMapper: DogDtoMapper) {
 
+    @Throws(Exception::class)
     fun execute(): CommonFlow<DataState<List<Dog>>> = flow {
         try {
             emit(DataState.loading())
