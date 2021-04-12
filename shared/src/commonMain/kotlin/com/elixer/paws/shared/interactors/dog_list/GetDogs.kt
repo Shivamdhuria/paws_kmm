@@ -1,6 +1,5 @@
 package com.elixer.paws.shared.interactors.dog_list
 
-import android.util.Log
 import com.elixer.paws.shared.datasource.network.RecipeService
 import com.elixer.paws.shared.datasource.network.model.DogDtoMapper
 import com.elixer.paws.shared.domain.data.DataState
@@ -23,7 +22,6 @@ class GetDogs(private val recipeService: RecipeService, private val dtoMapper: D
 
     private suspend fun getDogsFromNetwork(): List<Dog> {
         val dogDtos = recipeService.getDogs().message
-        Log.e("get dogs ", dogDtos.toString())
         return dtoMapper.toDomainList(dogDtos)
     }
 }
