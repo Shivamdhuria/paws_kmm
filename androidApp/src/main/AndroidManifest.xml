@@ -3,6 +3,7 @@
     package="com.elixer.paws.android">
 
     <application
+        android:name=".BaseApplication"
         android:allowBackup="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

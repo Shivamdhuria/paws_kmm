@@ -4,9 +4,26 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.android.library")
-    id("kotlin-android-extensions")
+
     id("com.squareup.sqldelight")
 }
+android {
+    compileSdkVersion(30)
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    defaultConfig {
+        minSdkVersion(21)
+        targetSdkVersion(30)
+    }
+    configurations {
+        create("androidTestApi")
+        create("androidTestDebugApi")
+        create("androidTestReleaseApi")
+        create("testApi")
+        create("testDebugApi")
+        create("testReleaseApi")
+    }
+}
+
 
 kotlin {
     android()
@@ -25,7 +42,7 @@ kotlin {
         }
     }
 
-    val ktorVersion = "1.4.0"
+    val ktorVersion = "1.4.1"
     val serializationVersion = "1.0.0-RC"
     val sqlDelightVersion: String by project
     val coroutinesVersion = "1.3.9-native-mt"
@@ -39,6 +56,8 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
+
             }
         }
         val commonTest by getting {
@@ -76,14 +95,6 @@ sqldelight {
     }
 }
 
-android {
-    compileSdkVersion(30)
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(30)
-    }
-}
 
 val packForXcode by tasks.creating(Sync::class) {
     val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
