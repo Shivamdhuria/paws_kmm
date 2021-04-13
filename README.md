@@ -34,7 +34,7 @@ And follow me on [Medium](https://medium.com/@shivamdhuria) and [Github](https:/
   
   
 ### Issues and Contribution
-I am unable to add watchOS to the project, and taking PRs for that.
+WatchOS is still under progress but I will take PRs for that.
 
 
 ### Project Maintainers
