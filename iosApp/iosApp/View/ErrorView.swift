@@ -1,3 +1,10 @@
+//
+//  ErrorView.swift
+//  iosApp
+//
+//  Created by Shivam Dhuria on 13/04/21.
+//  Copyright © 2021 orgName. All rights reserved.
+//
 
 import SwiftUI
 

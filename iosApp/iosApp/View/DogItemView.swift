@@ -1,6 +1,14 @@
+//
+//  DogItemView.swift
+//  iosApp
+//
+//  Created by Shivam Dhuria on 13/04/21.
+//  Copyright © 2021 orgName. All rights reserved.
+//
+
 import SwiftUI
-import URLImage
 import shared
+import URLImage
 
 struct DogItemView: View {
 
@@ -13,7 +21,7 @@ struct DogItemView: View {
                 if let url = URL(string: dog.imageUrl){
                     URLImage(url: url,
                              options: URLImageOptions(
-                                identifier: imageUrl,
+                                identifier: dog.imageUrl,
                                 expireAfter: nil,
                                 cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: nil)
                              ),
@@ -28,7 +36,7 @@ struct DogItemView: View {
 
                 }
 
-                let breedName = dog.breedName
+                let breedName = dog.breed
 
                 Text(breedName)
                     .foregroundColor(Color.gray)

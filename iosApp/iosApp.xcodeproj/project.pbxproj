@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C7B197262588FA00577504 /* DogItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7B196262588FA00577504 /* DogItemView.swift */; };
+		18C7B1992625890900577504 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7B1982625890900577504 /* ErrorView.swift */; };
 		18F0846A2624A82B002D98BB /* DogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F084692624A82B002D98BB /* DogListViewModel.swift */; };
 		18F0846D2624BD22002D98BB /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 18F0846C2624BD22002D98BB /* URLImage */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18C7B196262588FA00577504 /* DogItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogItemView.swift; sourceTree = "<group>"; };
+		18C7B1982625890900577504 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		18F084692624A82B002D98BB /* DogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewModel.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C7B195262588D000577504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18C7B196262588FA00577504 /* DogItemView.swift */,
+				18C7B1982625890900577504 /* ErrorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +84,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				18C7B195262588D000577504 /* View */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				18F084692624A82B002D98BB /* DogListViewModel.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -183,6 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C7B1992625890900577504 /* ErrorView.swift in Sources */,
+				18C7B197262588FA00577504 /* DogItemView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				18F0846A2624A82B002D98BB /* DogListViewModel.swift in Sources */,

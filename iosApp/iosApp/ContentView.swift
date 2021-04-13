@@ -25,7 +25,7 @@ struct ContentView: View {
             case .failed(let errorMessage):ErrorView(error: errorMessage, handler: viewModel.loadDogs)
             case .success:
                     Spacer()
-                    Button (action : viewModel.loadDogs ,labelDogI :{Text("Load more ")})
+                    Button (action : viewModel.loadDogs ,label :{Text("Load more ")})
 
             }
         }.onAppear(perform: viewModel.loadDogs)
