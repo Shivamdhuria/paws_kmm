@@ -5,9 +5,12 @@
 <p align="center">
 A KMM application written whose buisness layer is written in Kotlin and front end written in Jetpack Compose and Swift UI  </p>
 
+<p align="center">
+<img src="./previews/emulator.png" width="700">
+</p>
+
 
 ## Tech Stack
-<img src="/previews/transition.gif" align="right" width="20%"/>
 
 - [Kotlin](https://kotlinlang.org/)  
 - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)  
